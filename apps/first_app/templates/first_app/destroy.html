@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Remove Classes</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="panel_heading">
+        <h1>Remove Classes {{id}}</h1>
+        <h2>Are you sure you want to delete the following course?</h2>
+      </div>
+      <div class="remove">
+        <h4>Name: {{C.names}} </h4>
+        <h4>Description: {{C.description}}</h4>
+      </div>
+      <button type="reset" name="No"><a href="/">No</a></button>
+      <form action="/removethis/{{C.id}}" method="post">
+        {% csrf_token %}
+        <input type="submit" name="yes" value="YES"></form>
+    </div>
+  </body>
+</html>
